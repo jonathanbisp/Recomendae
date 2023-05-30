@@ -43,15 +43,24 @@
 <!-- <p>Este projeto foi desenvolvido por:</p> -->
 <ul>
 	<li><a href = "">Bruno Fortunato Castro (Project Manager)</a></li>
-	<li><a href = "">Jonathan Bispo dos Santos (Tech Lead)</a></li>
+	<li>
+		<!-- <img align="center" height="17" width="17" src="https://avatars.githubusercontent.com/u/51280590?v=4"> -->
+		<a href = "https://github.com/jonathanbisp"> Jonathan Bispo dos Santos (Tech Lead)</a>
+	</li>  
 	<li><a href = "">Luiz Henrique Santos da Silva (Programador)</a></li>
-	<li><a href = "https://github.com/CoutinhoThiago" target="_blank"> Thiago Coutinho Sousa Silva (Quality Assurance) </a></li>
+	<li><a href = "https://github.com/CoutinhoThiago"> Thiago Coutinho Sousa Silva (Quality Assurance) </a></li>
 	<li><a href = "">Yuri Cardoso Vasconcelos (Programador)</a></li>
 </ul>
 
 <h2>Encontros</h2>
-<p>Encontros semanais aos sábados pelo Discord.</p>
-<p>Acompanhamento assíncrono pelo discord e pelo WhatsaApp.</p>
+<p>
+	<img align="center" height="16" width="18" src="https://w7.pngwing.com/pngs/191/229/png-transparent-computer-icons-discord-logo-judgment-apocalypse-survival-simulation-discord-face-logo-computer-wallpaper.png">
+	<a>Encontros semanais aos sábados</a>
+</p>
+<p>
+	<img align="center" height="16" width="18" src="https://w7.pngwing.com/pngs/645/890/png-transparent-computer-icons-logo-whatsapp-whatsapp-text-logo-whatsapp-icon.png">
+	<a>Acompanhamento assíncrono</a> 
+</p>
 
 <h2>Licença</h2>
 <p>Este projeto é licenciado sob a licença GPL.</p>
