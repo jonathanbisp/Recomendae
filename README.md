@@ -14,16 +14,16 @@
 <h2>Tecnologias Utilizadas</h2>
 <p>Para o desenvolvimento:</p>
 <ul>
-	<li>React</li>
-	<li>Python</li>
-	<li>Docker</li>
-	<li>PostgreSQL</li>
+	<li><a href = "https://react.dev/">React</a></li>
+	<li><a href = "">Python</a></li>
+	<li><a href = "https://www.docker.com/">Docker</a></li>
+	<li><a href = "https://www.postgresql.org/">PostgreSQL</a></li>
 </ul>
 
 <p>Para comunicação:</p>
 <ul>
-	<li>[WhatsApp](https://chat.whatsapp.com/BZP7fZ4mvKDJmaSvQoYU9t)</li>
-	<li>[Discord](https://discord.gg/7udjhkrTcd)</li>
+	<li> <a href = "https://chat.whatsapp.com/BZP7fZ4mvKDJmaSvQoYU9t">WhatsApp</a></li>
+	<li> <a href = "https://discord.gg/7udjhkrTcd">Discord</a></li>
 </ul>
 <h2>Como usar</h2>
 <p>Para utilizar o projeto, basta</p>
@@ -32,7 +32,7 @@
 <p>Para instalar e executar o projeto usando Docker, siga as instruções abaixo:</p>
 <ul>
 	<li>Instale o Docker em sua máquina;</li>
-	<li>Execute o comando: <code>docker compose --env-file ./config/env.dev up</code>;</li>
+	<li>Execute o comando: <code>docker compose --env-file ./config/env.dev up</code></li>
 	<li>Acesse o endereço http://localhost:8000 em seu navegador para visualizar o site.</li>
 </ul>
 
@@ -42,11 +42,11 @@
 <h2>Autores</h2>
 <!-- <p>Este projeto foi desenvolvido por:</p> -->
 <ul>
-	<li> <a href = "">Bruno Fortunato Castro (Project Manager)</a></li>
-	<li> <a href = "">Jonathan Bispo dos Santos (Tech Lead)</a></li>
-	<li> <a href = "">Luiz Henrique Santos da Silva (Programador)</a></li>
-	<li> <a href = "https://github.com/CoutinhoThiago", target = "_blank"> Thiago Coutinho Sousa Silva (Quality Assurance) </a></li>
-	<li> <a href = "">Yuri Cardoso Vasconcelos (Programador)</a></li>
+	<li><a href = "">Bruno Fortunato Castro (Project Manager)</a></li>
+	<li><a href = "">Jonathan Bispo dos Santos (Tech Lead)</a></li>
+	<li><a href = "">Luiz Henrique Santos da Silva (Programador)</a></li>
+	<li><a href = "https://github.com/CoutinhoThiago" target="_blank"> Thiago Coutinho Sousa Silva (Quality Assurance) </a></li>
+	<li><a href = "">Yuri Cardoso Vasconcelos (Programador)</a></li>
 </ul>
 
 <h2>Encontros</h2>
