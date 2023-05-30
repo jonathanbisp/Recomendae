@@ -45,7 +45,7 @@
 	<li> <a href = "">Bruno Fortunato Castro (Project Manager)</a></li>
 	<li> <a href = "">Jonathan Bispo dos Santos (Tech Lead)</a></li>
 	<li> <a href = "">Luiz Henrique Santos da Silva (Programador)</a></li>
-	<li> <a href = "https://github.com/CoutinhoThiago"> Thiago Coutinho Sousa Silva (Quality Assurance) </a></li>
+	<li> <a href = "https://github.com/CoutinhoThiago" target = "_blank"> Thiago Coutinho Sousa Silva (Quality Assurance) </a></li>
 	<li> <a href = "">Yuri Cardoso Vasconcelos (Programador)</a></li>
 </ul>
 
