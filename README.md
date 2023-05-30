@@ -39,16 +39,19 @@
 <h2>Contribuição</h2>
 <p>Contribuições são sempre bem-vindas! Se você encontrou um bug ou tem uma sugestão de melhoria, por favor abra uma issue ou envie um pull request.</p>
 
-<h2>Autor</h2>
-<p>Este projeto foi desenvolvido por:</p>
-<p>Bruno Fortunato Castro (Project Manager)</p>
-<p>Jonathan Bispo dos Santos (Tech Lead)</p>
-<p>Luiz Henrique Santos da Silva (Programador)</p>
-<p>Thiago Coutinho Sousa Silva (Quality Assurance)</p>
-<p>Yuri Cardoso Vasconcelos (Programador)</p>
+<h2>Autores</h2>
+<!-- <p>Este projeto foi desenvolvido por:</p> -->
+<ul>
+	<li> <a href = "">Bruno Fortunato Castro (Project Manager)</a></li>
+	<li> <a href = "">Jonathan Bispo dos Santos (Tech Lead)</a></li>
+	<li> <a href = "">Luiz Henrique Santos da Silva (Programador)</a></li>
+	<li> <a href = "https://github.com/CoutinhoThiago"> Thiago Coutinho Sousa Silva (Quality Assurance) </a></li>
+	<li> <a href = "">Yuri Cardoso Vasconcelos (Programador)</a></li>
+</ul>
 
 <h2>Encontros</h2>
-<p>Todas quartas e sabádos durante a tarde.</p>
+<p>Encontros semanais aos sábados pelo Discord.</p>
+<p>Acompanhamento assíncrono pelo discord e pelo WhatsaApp.</p>
 
 <h2>Licença</h2>
 <p>Este projeto é licenciado sob a licença GPL.</p>
