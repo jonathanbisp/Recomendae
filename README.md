@@ -65,14 +65,16 @@
 </ul>
 
 <h2>Encontros</h2>
-<p>
-	<img align="center" height="16" width="18" src="https://w7.pngwing.com/pngs/191/229/png-transparent-computer-icons-discord-logo-judgment-apocalypse-survival-simulation-discord-face-logo-computer-wallpaper.png">
-	<a>Encontros semanais aos sábados</a>
-</p>
-<p>
-	<img align="center" height="16" width="18" src="https://w7.pngwing.com/pngs/645/890/png-transparent-computer-icons-logo-whatsapp-whatsapp-text-logo-whatsapp-icon.png">
-	<a>Acompanhamento assíncrono</a> 
-</p>
+<ul>
+	<li>
+		<img align="center" height="16" width="18" src="https://w7.pngwing.com/pngs/191/229/png-transparent-computer-icons-discord-logo-judgment-apocalypse-survival-simulation-discord-face-logo-computer-wallpaper.png">
+		<a>Encontros semanais aos sábados</a>
+	</li>
+	<li>
+		<img align="center" height="16" width="18" src="https://w7.pngwing.com/pngs/645/890/png-transparent-computer-icons-logo-whatsapp-whatsapp-text-logo-whatsapp-icon.png">
+		<a>Acompanhamento assíncrono</a> 
+	</li>
+</ul>
 
 <h2>Licença</h2>
 <p>Este projeto é licenciado sob a licença GPL.</p>
