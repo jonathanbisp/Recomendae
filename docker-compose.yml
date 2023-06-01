@@ -22,6 +22,35 @@ services:
       - postgres-db
     networks:
       - postgres-pgadmin-network
+
+  backend:
+    build:
+      context: /backend
+      no_cache: true
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres-db
+    networks:
+      - backend-postgres-network
+
+  web-frontend:
+    build:
+      context: /frontend
+      no_cache: true
+    environment:
+      - NODE_ENV=${ENV}
+    ports:
+      - "8000:8000"
+    depends_on:
+      - backend
+    networks:
+      - backend-frontend-network
+
 networks:
   postgres-pgadmin-network:
+    driver: bridge
+  backend-postgres-network:
+    driver: bridge
+  backend-frontend-network:
     driver: bridge
