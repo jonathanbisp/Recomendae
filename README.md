@@ -42,14 +42,26 @@
 <h2>Autores</h2>
 <!-- <p>Este projeto foi desenvolvido por:</p> -->
 <ul>
-	<li><a href = "">Bruno Fortunato Castro (Project Manager)</a></li>
 	<li>
-		<!-- <img align="center" height="17" width="17" src="https://avatars.githubusercontent.com/u/51280590?v=4"> -->
+		<img align="center" height="17" width="17" src="https://avatars.githubusercontent.com/u/80074097?v=4">
+		<a href = "https://github.com/BrunoFCastro">Bruno Fortunato Castro (Project Manager)</a>
+	</li>
+	<li>
+		<img align="center" height="17" width="17" src="https://avatars.githubusercontent.com/u/51280590?v=4">
 		<a href = "https://github.com/jonathanbisp"> Jonathan Bispo dos Santos (Tech Lead)</a>
 	</li>  
-	<li><a href = "">Luiz Henrique Santos da Silva (Programador)</a></li>
-	<li><a href = "https://github.com/CoutinhoThiago"> Thiago Coutinho Sousa Silva (Quality Assurance) </a></li>
-	<li><a href = "">Yuri Cardoso Vasconcelos (Programador)</a></li>
+	<li>
+		<img align="center" height="17" width="17" src="https://avatars.githubusercontent.com/u/26752702?v=4">
+		<a href = "https://github.com/luislhss">Luiz Henrique Santos da Silva ((Desenvolvedor)</a>
+	</li>
+	<li>
+		<img align="center" height="17" width="17" src="https://avatars.githubusercontent.com/u/55064401?v=4">
+		<a href = "https://github.com/CoutinhoThiago"> Thiago Coutinho Sousa Silva (Quality Assurance) </a>
+	</li>
+	<li>
+		<img align="center" height="17" width="17" src="https://avatars.githubusercontent.com/u/54453832?v=4">
+		<a href = "https://github.com/Arrivedercci">Yuri Cardoso Vasconcelos (Desenvolvedor)</a>
+	</li>
 </ul>
 
 <h2>Encontros</h2>
