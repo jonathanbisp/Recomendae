@@ -5,6 +5,7 @@ FROM node:18.16-alpine as build-image
 WORKDIR /app
 # Copy app files
 COPY . .
+RUN npm install
 # Build the app
 RUN npm run build
 # ==== RUN =======

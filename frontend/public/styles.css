@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  margin-left: 70px;
+}
+
+.search-bar {
+  justify-content: center;
+  background-color: #333;
+  align-items: center;
+  padding: 15px;
+  text-align: center;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 800px; /* Ajuste o valor conforme necessário */
+  border-radius: 3px;
+  border: none;
+  margin-right: 5px;
+  background-color: #555;
+  color: #fff;
+}
+
+.search-bar button {
+  padding: 10px 15px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.login-options {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}
+
+.login-options span {
+  margin-bottom: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.banner {
+  position: relative;
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
+.arrow-left {
+  left: 20px;
+}
+
+.arrow-right {
+  right: 20px;
+}
+
+.news {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.news-item {
+  display: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.news-item.active {
+  display: block;
+}
+
+.news-indicator {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+}
+
+.books-section {
+  padding: 20px;
+}
+
+.book-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.book-item {
+  flex-basis: 30%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.book-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.book-item .title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.book-item .rating {
+  color: gold;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
