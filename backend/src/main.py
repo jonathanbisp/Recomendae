@@ -4,4 +4,4 @@ app = FastAPI()
 
 @app.get("/")
 async def home():
-    return {"version": "0.0.1"}
+    return {"version": "0.0.2"}
