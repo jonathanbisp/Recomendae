@@ -26,64 +26,56 @@ function updateNewsIndicator() {
   newsIndicator.textContent = '.'.repeat(currentNewsIndex) + ' ' + '.'.repeat(newsItems.length - currentNewsIndex - 1);
 }
 
+// Função para avançar para a próxima notícia automaticamente a cada 5 segundos
+function autoNextNews() {
+  setInterval(showNextNews, 5000);
+}
+
 // Event listeners para as setas do banner de notícias
 arrowLeft.addEventListener('click', showPreviousNews);
 arrowRight.addEventListener('click', showNextNews);
 
 // Inicialização do banner de notícias
-updateNewsIndicator();
-newsItems[currentNewsIndex].classList.add('active');
+if (newsItems.length > 0) {
+  updateNewsIndicator();
+  newsItems[currentNewsIndex].classList.add('active');
 
-// Função para exibir a próxima notícia
-function nextNews() {
-  const activeNews = document.querySelector('.news-item.active');
-  const nextNews = activeNews.nextElementSibling;
-  
-  if (nextNews !== null) {
-    activeNews.classList.remove('active');
-    nextNews.classList.add('active');
-  }
+  // Chamada da função para iniciar a rotação automática das notícias
+  autoNextNews();
 }
 
-// Função para exibir a notícia anterior
-function prevNews() {
-  const activeNews = document.querySelector('.news-item.active');
-  const prevNews = activeNews.previousElementSibling;
-  
-  if (prevNews !== null) {
-    activeNews.classList.remove('active');
-    prevNews.classList.add('active');
-  }
-}
+//Menu lateral
 
-// Evento de clique na seta para a próxima notícia
-const nextArrow = document.querySelector('.arrow-right');
-nextArrow.addEventListener('click', nextNews);
+// Seleciona o ícone do menu
+const menuIcon = document.querySelector('.menu-icon');
+// Seleciona o menu
+const menu = document.querySelector('.menu');
 
-// Evento de clique na seta para a notícia anterior
-const prevArrow = document.querySelector('.arrow-left');
-prevArrow.addEventListener('click', prevNews);
+// Adiciona um ouvinte de evento de clique ao ícone do menu
+menuIcon.addEventListener('click', toggleMenu);
 
-
-// Variável para controlar o estado do menu
-let isMenuOpen = false;
-
-// Função para alternar a exibição do menu
+// Alterna a classe 'active' no menu ao clicar no ícone do menu
 function toggleMenu() {
-  const menuButton = document.querySelector('.menu-button');
-  const menu = document.querySelector('.menu');
-
-  isMenuOpen = !isMenuOpen;
-
-  if (isMenuOpen) {
-    menuButton.classList.add('active');
-    menu.style.display = 'block';
-  } else {
-    menuButton.classList.remove('active');
-    menu.style.display = 'none';
-  }
+  menu.classList.toggle('active');
 }
 
-// Event listener para o botão do menu
-const menuButton = document.querySelector('.menu-button');
-menuButton.addEventListener('click', toggleMenu);
+// Seleciona o ícone de fechar
+const closeIcon = document.querySelector('.close-icon');
+
+// Adiciona um ouvinte de evento de clique ao ícone de fechar
+closeIcon.addEventListener('click', closeMenu);
+
+// Função para fechar o menu
+function closeMenu() {
+  menu.classList.remove('active');
+}
+
+// Adiciona um ouvinte de evento de clique no documento inteiro
+document.addEventListener('click', function(event) {
+  var targetElement = event.target;
+
+  // Verifica se o clique foi fora da barra lateral ou do ícone do menu
+  if (!menu.contains(targetElement) && !menuIcon.contains(targetElement)) {
+    menu.classList.remove('active');
+  }
+});

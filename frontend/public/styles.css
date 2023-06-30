@@ -67,6 +67,35 @@ header {
   cursor: pointer;
 }
 
+.menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  transition: left 0.3s ease;
+}
+
+.menu.active {
+  left: 0;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.menu li {
+  margin-bottom: 15px;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .banner {
   position: relative;
   background-color: #f2f2f2;
@@ -113,7 +142,17 @@ header {
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 24px;
+  font-size: 40px;
+}
+
+.news-indicator .other {
+  color: #333;
+  font-size: 40px;
+}
+
+.news-indicator .current {
+  color: #000;
+  font-size: 50px;
 }
 
 .books-section {
@@ -153,3 +192,12 @@ footer {
   padding: 10px;
   text-align: center;
 }
+
+.close-icon {
+  font-size: 24px;
+  color: red;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  }
