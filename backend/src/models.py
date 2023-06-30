@@ -1,7 +1,9 @@
 from sqlalchemy import Column, Integer, String, Text, ForeignKey
 from sqlalchemy.orm import relationship
 from passlib.hash import bcrypt
-from bancodados import Base
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
 
 
 class User(Base):
@@ -12,9 +14,8 @@ class User(Base):
     comments = relationship("Comment", back_populates="user")
     ratings = relationship("Rating", back_populates="user")
 
-    @staticmethod
-    def verify_password(plain_password, hashed_password):
-        return bcrypt.verify(plain_password, hashed_password)
+    def verify_password(self, plain_password):
+        return bcrypt.verify(plain_password, self.hashed_password)
 
 
 class Book(Base):
