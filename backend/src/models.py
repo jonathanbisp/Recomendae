@@ -1,32 +1,47 @@
-from pydantic import BaseModel
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Text, ForeignKey
+from sqlalchemy.orm import relationship
+from passlib.hash import bcrypt
+from bancodados import Base
 
 
-class Usuario:
-    __tablename__ = "Usuarios"
+class User(Base):
+    __tablename__ = "users"
     id = Column(Integer, primary_key=True, index=True)
-    nome = Column(String, index=True)
-    email = Column(String, unique=True, index=True)
     username = Column(String, unique=True, index=True)
-    password = Column(String)
+    hashed_password = Column(String)
+    comments = relationship("Comment", back_populates="user")
+    ratings = relationship("Rating", back_populates="user")
 
-class Autor(BaseModel):
-    idAutor: int
-    nome: str
-    idGenero: int
+    @staticmethod
+    def verify_password(plain_password, hashed_password):
+        return bcrypt.verify(plain_password, hashed_password)
 
-class Livro(BaseModel):
-    idLivro: int
-    titulo: str
-    idAutor: int
-    idGenero: int
 
-class Avaliacao(BaseModel):
-    idAval: int
-    idUsuario: int
-    idLivro: int
-    nota: float
+class Book(Base):
+    __tablename__ = "books"
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String, index=True)
+    genre = Column(String, index=True)
+    author = Column(String, index=True)
+    comments = relationship("Comment", back_populates="book")
+    ratings = relationship("Rating", back_populates="book")
 
-class Genero(BaseModel):
-    idGenero: int
-    nome: str
+
+class Comment(Base):
+    __tablename__ = "comments"
+    id = Column(Integer, primary_key=True, index=True)
+    content = Column(Text)
+    book_id = Column(Integer, ForeignKey("books.id"))
+    book = relationship("Book", back_populates="comments")
+    user_id = Column(Integer, ForeignKey("users.id"))
+    user = relationship("User")
+
+
+class Rating(Base):
+    __tablename__ = "ratings"
+    id = Column(Integer, primary_key=True, index=True)
+    rating = Column(Integer)
+    book_id = Column(Integer, ForeignKey("books.id"))
+    book = relationship("Book", back_populates="ratings")
+    user_id = Column(Integer, ForeignKey("users.id"))
+    user = relationship("User")
