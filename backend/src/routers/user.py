@@ -3,13 +3,13 @@ from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from sqlalchemy.orm import Session
 from passlib.hash import bcrypt
 from models import User
-from database import get_db, SessionLocal
+from database import get_db
 
 router = APIRouter()
 security = HTTPBasic()
 
-
-@router.post("/register")
+#Cadastra o usuario no banco de dados, com senha criptografada retornando erro caso já exista.
+@router.post("/register") 
 def register(username: str, password: str, db: Session = Depends(get_db)):
     user = db.query(User).filter(User.username == username).first()
     if user:
@@ -21,7 +21,7 @@ def register(username: str, password: str, db: Session = Depends(get_db)):
     db.refresh(user)
     return user
 
-
+#Realiza o login do usuario, retornando erro caso não exista.
 @router.post("/login")
 def login(credentials: HTTPBasicCredentials = Depends(security), db: Session = Depends(get_db)):
     user = db.query(User).filter(User.username == credentials.username).first()
