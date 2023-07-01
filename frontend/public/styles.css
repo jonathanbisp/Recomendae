@@ -200,4 +200,65 @@ footer {
   position: absolute;
   top: 15px;
   right: 15px;
-  }
+}
+
+.logged-in-user {
+  display: none;
+  font-weight: bold;
+  color: #333;
+}
+
+.login-screen,
+.create-account-screen {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.login-screen h2,
+.create-account-screen h2 {
+  margin-bottom: 20px;
+}
+
+.login-screen form,
+.create-account-screen form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-screen input,
+.create-account-screen input,
+.login-screen button,
+.create-account-screen button {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 200px;
+}
+
+.login-screen button,
+.create-account-screen button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+}
+
+.close-button {
+  font-size: 24px;
+  color: red;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+}

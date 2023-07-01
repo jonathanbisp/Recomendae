@@ -17,6 +17,7 @@
       <div class="login-options">
         <span class="login">Entrar</span>
         <span class="create-account">Criar Conta</span>
+        <span class="logged-in-user"></span>
       </div>
     </div>
   </header>
@@ -147,6 +148,7 @@
     </div>
   </div>
 
+  <!-- Menu lateral -->
   <div class="menu">
     <ul>
       <li><a href="#">Página Inicial</a></li>
@@ -159,6 +161,40 @@
       <span class="close-icon">x</span>
     </aside>
   </div>
+  
+  <!-- Tela de login -->
+  <div class="login-screen">
+    <form>
+      <button id="login-close-button" class="close-button" type="button">x</button>
+      <h2>Login</h2>
+      <select>
+        <option value="leitor">Leitor</option>
+        <option value="editora">Editora</option>
+      </select>
+      <!-- Campos de login: usuário e senha -->
+      <input type="text" placeholder="Usuário">
+      <input type="password" placeholder="Senha">
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+
+  <!-- Tela de cadastro -->
+  <div class="create-account-screen">
+    <form>
+      <button id="create-account-close-button" class="close-button" type="button">x</button>
+      <h2>Criar Conta</h2>
+      <select>
+        <option value="leitor">Leitor</option>
+        <option value="editora">Editora</option>
+      </select>
+      <!-- Campos de cadastro: nome, email, senha, etc. -->
+      <input type="text" placeholder="Nome">
+      <input type="email" placeholder="Email">
+      <input type="password" placeholder="Senha">
+      <input type="password" placeholder="Confirmar Senha">
+      <button type="submit">Criar Conta</button>
+    </form>
+  </div>  
 </div>
 
 <footer>
