@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, Text, ForeignKey
 from sqlalchemy.orm import relationship
+from pydantic import BaseModel
 from passlib.hash import bcrypt
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -24,8 +25,6 @@ class Book(Base):
     title = Column(String, index=True)
     genre = Column(String, index=True)
     author = Column(String, index=True)
-    comments = relationship("Comment", back_populates="book")
-    ratings = relationship("Rating", back_populates="book")
 
 
 class Comment(Base):
