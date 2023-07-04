@@ -14,3 +14,5 @@ class Book(IDModelMixin, DateTimeModelMixin, RWModel):
     author: Profile
     favorited: bool
     favorites_count: int
+    ratings: List[int] = []  
+    average_rating: float = 0.0  

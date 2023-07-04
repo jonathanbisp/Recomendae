@@ -102,3 +102,73 @@ async def remove_book_from_favorites(
         status_code=status.HTTP_400_BAD_REQUEST,
         detail=strings.BOOK_IS_NOT_FAVORITED,
     )
+    
+    
+@router.post(
+    "/{slug}/rate",
+    response_model=BookInResponse,
+    name="books:rate-book",
+)
+async def rate_book(
+    rating: int,
+    book: Book = Depends(get_book_by_slug_from_path),
+    user: User = Depends(get_current_user_authorizer()),
+    books_repo: BooksRepository = Depends(get_repository(BooksRepository)),
+) -> BookInResponse:
+    if not 1 <= rating <= 5:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Rating must be between 1 and 5.",
+        )
+
+    if rating in book.ratings:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="You have already rated this book.",
+        )
+
+    
+    book.ratings.append(rating)
+
+
+    total_ratings = len(book.ratings)
+    total_rating_sum = sum(book.ratings)
+    book.average_rating = total_rating_sum / total_ratings
+
+    await books_repo.update_book_ratings(book=book)
+
+    return BookInResponse(
+        book=BookForResponse.from_orm(book),
+    )
+
+
+@router.delete(
+    "/{slug}/rate",
+    response_model=BookInResponse,
+    name="books:unrate-book",
+)
+async def remove_rating_from_book(
+    book: Book = Depends(get_book_by_slug_from_path),
+    user: User = Depends(get_current_user_authorizer()),
+    books_repo: BooksRepository = Depends(get_repository(BooksRepository)),
+) -> BookInResponse:
+    if user.username not in book.ratings_by_user:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="You have not rated this book yet.",
+        )
+
+    # Remove the user's rating from the book's ratings list
+    rating = book.ratings_by_user[user.username]
+    book.ratings.remove(rating)
+
+    # Calculate the new average rating
+    total_ratings = len(book.ratings)
+    total_rating_sum = sum(book.ratings)
+    book.average_rating = total_rating_sum / total_ratings if total_ratings > 0 else 0
+
+    await books_repo.update_book_ratings(book=book)
+
+    return BookInResponse(
+        book=BookForResponse.from_orm(book),
+    )

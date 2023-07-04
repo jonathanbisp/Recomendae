@@ -114,3 +114,28 @@ ORDER BY a.created_at
 LIMIT :limit
 OFFSET
 :offset;
+
+-- name: add-rating-to-book!
+INSERT INTO ratings (user_id, book_id, rating)
+VALUES ((SELECT id FROM users WHERE username = :username),
+        (SELECT id FROM books WHERE slug = :slug),
+        :rating)
+ON CONFLICT (user_id, book_id) DO UPDATE
+SET rating = EXCLUDED.rating;
+
+-- name: update-rating-for-book!
+UPDATE ratings
+SET rating = :new_rating
+WHERE user_id = (SELECT id FROM users WHERE username = :username)
+  AND book_id = (SELECT id FROM books WHERE slug = :slug);
+
+-- name: get-average-rating-for-book
+SELECT AVG(rating) AS average_rating
+FROM ratings
+WHERE book_id = (SELECT id FROM books WHERE slug = :slug);
+
+-- name: is-book-rated-by-user^
+SELECT CASE WHEN count(user_id) > 0 THEN TRUE ELSE FALSE END AS rated
+FROM ratings
+WHERE user_id = (SELECT id FROM users WHERE username = :username)
+  AND book_id = (SELECT id FROM books WHERE slug = :slug);
