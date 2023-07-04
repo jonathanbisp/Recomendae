@@ -139,3 +139,13 @@ SELECT CASE WHEN count(user_id) > 0 THEN TRUE ELSE FALSE END AS rated
 FROM ratings
 WHERE user_id = (SELECT id FROM users WHERE username = :username)
   AND book_id = (SELECT id FROM books WHERE slug = :slug);
+
+-- name: update_book_rating!
+UPDATE books
+SET ratings = array_append(ratings, :rating),
+    average_rating = (
+        SELECT AVG(rating)
+        FROM unnest(array_append(ratings, :rating)) AS rating
+    ),
+    updated_at = CURRENT_TIMESTAMP
+WHERE slug = :slug;

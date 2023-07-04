@@ -16,7 +16,7 @@ class AppSettings(BaseAppSettings):
     openapi_url: str = "/openapi.json"
     redoc_url: str = "/redoc"
     title: str = "Recomendae"
-    version: str = "0.0.5"
+    version: str = "0.0.7"
 
     database_url: str = "postgresql://postgres:test@postgres-db:5432/postgres"
     max_connection_count: int = 10

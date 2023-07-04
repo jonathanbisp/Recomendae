@@ -413,3 +413,10 @@ class BooksRepository(BaseRepository):  # noqa: WPS214
             )
             for row in rating_rows
         ]
+
+    async def update_book_ratings(self, *, book: Book, rating: int) -> Book:
+        await queries.update_book_rating(
+        self.connection,
+        slug=book.slug,
+        rating=rating
+    )

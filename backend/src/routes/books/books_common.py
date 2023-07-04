@@ -135,7 +135,7 @@ async def rate_book(
     total_rating_sum = sum(book.ratings)
     book.average_rating = total_rating_sum / total_ratings
 
-    await books_repo.update_book_ratings(book=book)
+    await books_repo.update_book_ratings(book=book,rating=rating)
 
     return BookInResponse(
         book=BookForResponse.from_orm(book),

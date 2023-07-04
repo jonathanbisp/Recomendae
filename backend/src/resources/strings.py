@@ -2,6 +2,7 @@
 
 USER_DOES_NOT_EXIST_ERROR = "user does not exist"
 BOOK_DOES_NOT_EXIST_ERROR = "book does not exist"
+BOOK_ALREADY_EXISTS = "book already exists"
 
 INCORRECT_LOGIN_INPUT = "incorrect email or password"
 USERNAME_TAKEN = "user with this username already exists"
