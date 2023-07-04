@@ -6,14 +6,14 @@ from fastapi.security import APIKeyHeader
 from starlette import requests, status
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
-from src.dependencies.database import get_repository
-from src.core.config import get_app_settings
-from src.core.settings.app import AppSettings
-from src.db.errors import EntityDoesNotExist
-from src.db.repositories.users import UsersRepository
-from src.models.domain.users import User
-from src.resources import strings
-from src.services import jwt
+from dependencies.database import get_repository
+from core.config import get_app_settings
+from core.settings.app import AppSettings
+from db.errors import EntityDoesNotExist
+from db.repositories.users import UsersRepository
+from models.domain.users import User
+from resources import strings
+from services import jwt
 
 HEADER_KEY = "Authorization"
 

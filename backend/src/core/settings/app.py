@@ -5,8 +5,8 @@ from typing import Any, Dict, List, Tuple
 from loguru import logger
 from pydantic import PostgresDsn, SecretStr
 
-from src.core.logging import InterceptHandler
-from src.core.settings.base import BaseAppSettings
+from core.logging import InterceptHandler
+from core.settings.base import BaseAppSettings
 
 
 class AppSettings(BaseAppSettings):
@@ -15,10 +15,10 @@ class AppSettings(BaseAppSettings):
     openapi_prefix: str = ""
     openapi_url: str = "/openapi.json"
     redoc_url: str = "/redoc"
-    title: str = "FastAPI example application"
-    version: str = "0.0.0"
+    title: str = "Recomendae"
+    version: str = "0.0.5"
 
-    database_url: PostgresDsn
+    database_url: str = "postgresql://postgres:test@postgres-db:5432/postgres"
     max_connection_count: int = 10
     min_connection_count: int = 10
 

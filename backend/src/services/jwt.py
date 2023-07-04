@@ -4,8 +4,8 @@ from typing import Dict
 import jwt
 from pydantic import ValidationError
 
-from src.models.domain.users import User
-from src.models.schemas.jwt import JWTMeta, JWTUser
+from models.domain.users import User
+from models.schemas.jwt import JWTMeta, JWTUser
 
 JWT_SUBJECT = "access"
 ALGORITHM = "HS256"
