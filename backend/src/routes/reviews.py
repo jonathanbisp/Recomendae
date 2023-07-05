@@ -18,6 +18,7 @@ from models.schemas.reviews import (
     ReviewInCreate,
     ReviewInResponse,
     ListOfReviewsInResponse,
+    ReviewInUpdate,
 )
 
 router = APIRouter()
@@ -70,3 +71,27 @@ async def delete_review_from_book(
     reviews_repo: ReviewsRepository = Depends(get_repository(ReviewsRepository)),
 ) -> None:
     await reviews_repo.delete_review(review=review)
+
+
+@router.put(
+    "/{review_id}",
+    status_code=status.HTTP_200_OK,
+    response_model=ReviewInResponse,
+    name="reviews:update-review",
+)
+async def update_review(
+    review: Review = Depends(get_review_by_id_from_path),
+    review_update: ReviewInUpdate = Body(..., embed=True, alias="review"),
+    book: Book = Depends(get_book_by_slug_from_path),
+    user: User = Depends(get_current_user_authorizer()),
+    reviews_repo: ReviewsRepository = Depends(get_repository(ReviewsRepository)),
+) -> ReviewInResponse:
+    review = await reviews_repo.delete_review(review=review),
+    updated_review = await reviews_repo.create_review_for_book(
+        comment=review_update.comment,
+        rating=review_update.rating,
+        book=book,
+        user=user,
+    )
+
+    return ReviewInResponse(review=updated_review)

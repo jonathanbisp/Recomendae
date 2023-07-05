@@ -1,4 +1,4 @@
-from typing import List
+from typing import List,Optional
 
 from models.domain.reviews import Review
 from models.schemas.rwschema import RWSchema
@@ -15,3 +15,7 @@ class ReviewInResponse(RWSchema):
 class ReviewInCreate(RWSchema):
     comment: str
     rating: int
+
+class ReviewInUpdate(RWSchema):
+    comment: Optional[str]
+    rating: Optional[int]
