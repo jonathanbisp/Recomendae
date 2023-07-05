@@ -1,51 +1,71 @@
 .create-account-screen {
   display: flex;
-  
-  top: 0;
-  left: 0;
-  width: 300px;
-  height: 400px;
-  background-color: #333; /* rgba(0, 0, 0, 0.8); */
-  color: #fff;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  text-align: center;
-  z-index: 9999;
-  border-radius: 10px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  width: 300px;
+  margin: auto;
+  margin-top: 50px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-.create-account-screen h2 {
-  margin-bottom: 20px;
-}
-
-.create-account-screen form {
+.create-account-form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
-.create-account-screen input,
-.create-account-screen button {
-  margin-bottom: 10px;
+.create-account-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.create-account-form .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.create-account-form .form-group label {
+  margin-bottom: 5px;
+}
+
+.create-account-form .form-group input[type='text'],
+.create-account-form .form-group input[type='password'],
+.create-account-form .form-group input[type='email'] {
   padding: 10px;
-  width: 200px;
-  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.create-account-screen button {
-  background-color: #fff;
-  color: #000;
+.create-account-form .form-group button[type='submit'] {
+  padding: 10px;
+  background-color: #428bca;
+  color: #fff;
   border: none;
   cursor: pointer;
 }
 
-.close-button {
-  font-size: 24px;
-  color: red;
-  cursor: pointer;
+.create-account-form .form-group button[type='submit']:hover {
+  background-color: #3071a9;
+}
+
+.create-account-form .close-button {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  background: none;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
   border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #888;
+}
+
+.create-account-form .close-button:hover {
+  color: #555;
 }

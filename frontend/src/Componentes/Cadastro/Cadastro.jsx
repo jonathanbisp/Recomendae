@@ -65,23 +65,47 @@ function Cadastro({ onClose }) {
 
   return (
     <div className="create-account-screen">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="create-account-form">
+        <button id="cadastro-close-button" className="close-button" type="button" onClick={onClose}>
+          X
+        </button>
         <h2>Criar Conta</h2>
-        <select value={tipoConta} onChange={(e) => setTipoConta(e.target.value)}>
-          <option value="leitor">Leitor</option>
-          <option value="editora">Editora</option>
-        </select>
-        <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} placeholder="Nome" />
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
-        {erroEmail && <p className="erro-mensagem">{erroEmail}</p>}
-        <input type="password" value={senha} onChange={(e) => setSenha(e.target.value)} placeholder="Senha" />
-        <input
-          type="password"
-          value={confirmarSenha}
-          onChange={(e) => setConfirmarSenha(e.target.value)}
-          placeholder="Confirmar Senha"
-        />
-        {erroSenha && <p className="erro-mensagem">{erroSenha}</p>}
+        <div className="form-group">
+          <label htmlFor="nome">Nome</label>
+          <input type="text" id="nome" value={nome} onChange={(e) => setNome(e.target.value)} placeholder="Nome" />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+          />
+          {erroEmail && <p className="erro-mensagem">{erroEmail}</p>}
+        </div>
+        <div className="form-group">
+          <label htmlFor="senha">Senha</label>
+          <input
+            type="password"
+            id="senha"
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+            placeholder="Senha"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="confirmarSenha">Confirmar Senha</label>
+          <input
+            type="password"
+            id="confirmarSenha"
+            value={confirmarSenha}
+            onChange={(e) => setConfirmarSenha(e.target.value)}
+            placeholder="Confirmar Senha"
+          />
+          {erroSenha && <p className="erro-mensagem">{erroSenha}</p>}
+        </div>
         <button type="submit">Criar Conta</button>
       </form>
     </div>
