@@ -46,4 +46,4 @@ app = get_application()
 
 @app.get("/")
 async def home():
-    return {"version": "0.0.2"}
+    return {"version": "0.0.7"}
