@@ -6,10 +6,12 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_HOST_AUTH_METHOD: trust
     volumes:
       - ./db/data:/var/lib/postgresql/data
     networks:
       - postgres-pgadmin-network
+      - backend-postgres-network
 
   pgadmin:
     image: dpage/pgadmin4
@@ -33,6 +35,7 @@ services:
       - postgres-db
     networks:
       - backend-postgres-network
+      - backend-frontend-network
 
   web-frontend:
     build:
