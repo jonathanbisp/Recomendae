@@ -2,11 +2,22 @@ import React, { useState } from 'react';
 import './UserInfo.css';
 import Cadastro from '../Cadastro/Cadastro';
 import Login from '../Login/Login';
+import api from '../../api';
 
 function UserInfo() {
   const [mostrarCadastro, setMostrarCadastro] = useState(false);
   const [mostrarLogin, setMostrarLogin] = useState(false);
   const [nomeUsuario, setNomeUsuario] = useState('');
+  const [token, setToken] = useState();
+
+  api.interceptors.request.use(async config => {
+  
+    if (token) {
+      api.defaults.headers.authorization = `Token ${token}`;
+    }
+  
+    return config;
+  });
 
   const handleAbrirCadastro = () => {
     setMostrarCadastro(true);
@@ -56,7 +67,7 @@ function UserInfo() {
       {mostrarLogin && (
         <div className="popup-container" onClick={handleFecharLogin}>
           <div className="popup" onClick={(e) => e.stopPropagation()}>
-            <Login onClose={handleFecharLogin} />
+            <Login onClose={handleFecharLogin} setToken={setToken} />
           </div>
         </div>
       )}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./BookItem.css";
 
-function BookItem({ ulrImg, titulo, avaliacao, autor, sinopse }) {
+function BookItem({ ulrImg, titulo, avaliacao, autor, sinopse, slug }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isCommenting, setIsCommenting] = useState(false);
   const [rating, setRating] = useState(0);
@@ -41,9 +41,9 @@ function BookItem({ ulrImg, titulo, avaliacao, autor, sinopse }) {
   };
 
   return (
-    <div className="book-item">
-      <div className="book-info">
-        <img src={ulrImg} alt="Capa do Livro" onClick={handleItemClick} />
+    <div className="book-item" >
+      <div className="book-info" onClick={handleItemClick}>
+        <img src={ulrImg} alt="Capa do Livro"  />
         <div className="book-details">
           <div className="title">{titulo}</div>
           <div className="rating">&#9733;&#9733;&#9733;&#9734;&#9734;</div>
