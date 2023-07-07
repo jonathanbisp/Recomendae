@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./BookItem.css";
 
-function BookItem({ ulrImg, titulo, avaliacao, autor, editora, sinopse }) {
+function BookItem({ ulrImg, titulo, avaliacao, autor, sinopse }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isCommenting, setIsCommenting] = useState(false);
   const [rating, setRating] = useState(0);
@@ -48,7 +48,7 @@ function BookItem({ ulrImg, titulo, avaliacao, autor, editora, sinopse }) {
           <div className="title">{titulo}</div>
           <div className="rating">&#9733;&#9733;&#9733;&#9734;&#9734;</div>
           <div>
-            {autor}/{editora}
+            {autor}
           </div>
         </div>
       </div>

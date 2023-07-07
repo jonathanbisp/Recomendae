@@ -19,13 +19,3 @@ body {
     padding: 10px;
     text-align: center;
   }
-  
-  .books-section {
-    padding: 20px;
-  }
-
-  .book-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }

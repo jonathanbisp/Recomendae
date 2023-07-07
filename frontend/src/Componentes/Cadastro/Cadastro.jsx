@@ -29,8 +29,8 @@ function Cadastro({ onClose }) {
       return;
     }
 
-    if (senha.length < 8) {
-      setErroSenha('A senha deve ter pelo menos 8 caracteres.');
+    if (senha.length < 3) {
+      setErroSenha('A senha deve ter pelo menos 3 caracteres.');
       return;
     }
 
