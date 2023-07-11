@@ -1,61 +1,165 @@
-.book-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.book-item {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
 }
 
-.book-item {
-  flex-basis: 30%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.book-info {
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
 }
 
-.book-item .book-info {
-  display: flex;
-  align-items: flex-start;
+.book-cover {
+  width: 80px;
+  height: 120px;
+  cursor: pointer;
+  margin-right: 10px;
+  overflow: hidden;
 }
 
-.book-item img {
-  max-width: 100%;
-  max-height: 250px;
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.book-item .book-details {
-  margin-left: 10px;
+.book-details {
+  flex-grow: 1;
 }
 
-.book-item .title {
+.title {
+  font-size: 16px;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-.book-item .rating {
-  color: gold;
+.rating {
+  font-size: 18px;
+  color: #f4d03f;
+  margin-bottom: 5px;
 }
 
-.book-item .expanded-content {
+.expanded-content {
   margin-top: 10px;
 }
 
-.book-item .sinopse-section {
+.sinopse-section h2 {
+  font-size: 16px;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
-.book-item .actions {
-  margin-bottom: 10px;
+.sinopse-section p {
+  white-space: pre-line;
 }
 
-.book-item .comment-section {
+.actions {
   margin-top: 10px;
 }
 
-.book-item .rating-section {
-  margin-bottom: 10px;
+.comment-section {
+  margin-top: 10px;
 }
 
-.book-item .comment-textarea textarea {
+.rating-section p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.star {
+  font-size: 20px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.star.active {
+  color: #f4d03f;
+}
+
+.comment-textarea textarea {
   width: 100%;
-  height: 100px;
+  height: 80px;
+  max-height: 200px;
+  padding: 5px;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.comment-textarea textarea::placeholder {
+  color: #aaa;
+}
+
+.comment-textarea textarea:focus {
+  outline: none;
+}
+
+.comment-section button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.reviews-section h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.reviews-content {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.review {
+  margin-bottom: 10px;
+}
+
+.review-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.review-user {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.review-date {
+  font-size: 12px;
+  color: #777;
+}
+
+.review-rating {
+  color: #f4d03f;
+  margin-left: 10px;
+  word-break: break-all;
+}
+
+.review-comment {
+  margin-top: 5px;
+  font-size: 14px;
+  white-space: pre-line;
+}
+
+.review-comment::-webkit-scrollbar {
+  width: 6px;
+}
+
+.review-comment::-webkit-scrollbar-track {
+  background-color: #f9f9f9;
+}
+
+.review-comment::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+
+.review-comment::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
 }
