@@ -3,29 +3,32 @@ import { useState } from 'react';
 import api from '../../api';
 import './Login.css';
 
-function Login({ onClose }) {
-  const [email, setEmail] = useState()
-  const [senha, setSenha] = useState()
+async function login(credentials){
+  return api.post("/api/users/login", credentials
+    )
+    .then((response) => response.data.user.token)
+    .catch((err) => {console.error("ops! ocorreu um erro" + err);
+     });
+}
 
-  function login(){
-    api
-      .post("/api/users/login", 
-        {
-          "user": {
-            "email": email,
-            "password": senha
-          }
-        })
-      .then((response) => console.log(response.user.token))
-      .catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
-      });
+function Login({ onClose, setToken }) {
+  const [email, setEmail] = useState("")
+  const [senha, setSenha] = useState("")
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const token = await login({
+      "user": {
+        "email": email,
+        "password": senha
+      }
+    });
+    setToken('Token '+token);
   }
-
 
   return (
     <div className="login-screen">
-      <form className="login-form">
+      <form className="login-form" onSubmit={handleSubmit}>
         <button id="login-close-button" className="close-button" type="button" onClick={onClose}>
           X
         </button>
@@ -43,5 +46,7 @@ function Login({ onClose }) {
     </div>
   );
 }
+
+
 
 export default Login;

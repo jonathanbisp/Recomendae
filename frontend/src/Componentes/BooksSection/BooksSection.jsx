@@ -14,11 +14,13 @@ function BooksSection (){
         });
     }, []);
 
+    // Essa função impede o sistema acuse erro ao carregar a página
     function carrega(){
         if(livros === undefined){
+            // Se quiser pode formatar a tela de carregamento para que ela fique mais agradável
             return "Carregando"
         }
-        return livros.map((livro) => <BookItem titulo={livro.title} autor={livro.author.username} ulrImg={livro.body} sinopse={livro.description} />)
+        return livros.map((livro) => <BookItem titulo={livro.title} autor={livro.author.username} ulrImg={livro.body} sinopse={livro.description} slug={livro.slug} />)
     }
 
   return (<div class="books-section">

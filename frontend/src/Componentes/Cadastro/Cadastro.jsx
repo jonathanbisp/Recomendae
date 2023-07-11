@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 import './Cadastro.css';
+import api from '../../api';
 
-function Cadastro({ onClose }) {
+async function verifica(credentials){
+  return api.post("/api/users", credentials
+    )
+    .then((response) => console.log(response.data.user.token))
+    .catch((err) => {console.error("ops! ocorreu um erro" + err);
+     });
+}
+
+function Cadastro({ onClose, setToken }) {
   const [tipoConta, setTipoConta] = useState('leitor');
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
@@ -34,33 +43,15 @@ function Cadastro({ onClose }) {
       return;
     }
 
-    const cadastroData = {
-      tipoConta,
-      nome,
-      email,
-      senha,
-      confirmarSenha,
-    };
-
-    try {
-      const response = await fetch('http://localhost:8000/api/cadastro', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(cadastroData),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        console.log(data);
-        onClose(); // Fechar a tela de cadastro
-      } else {
-        throw new Error('Erro ao enviar o formulário de cadastro.');
-      }
-    } catch (error) {
-      console.error(error);
-    }
+    const token = await verifica
+    ({
+        "user": {
+          "email": email,
+          "password": senha,
+          "username": nome
+        }
+      })
+    setToken('Token '+token);
   };
 
   return (
