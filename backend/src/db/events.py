@@ -82,7 +82,7 @@ async def connect_to_db(app: FastAPI, settings: AppSettings) -> None:
 
     await app.state.pool.execute(
         "CREATE TABLE IF NOT EXISTS reviews(\n"
-        "    id INT PRIMARY KEY,\n"
+        "    id SERIAL PRIMARY KEY,\n"
         "    comment TEXT NOT NULL,\n"
         "    rating INT, author_id INT,\n"
         "    book_id INT,\n"
