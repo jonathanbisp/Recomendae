@@ -21,6 +21,8 @@ class AppSettings(BaseAppSettings):
     database_url: str = "postgresql://postgres:test@postgres-db:5432/postgres"
     max_connection_count: int = 10
     min_connection_count: int = 10
+    db_conn_retry_interval: int = 10
+    db_conn_max_retry_count: int = 5
 
     secret_key: SecretStr
 
