@@ -1,4 +1,4 @@
-FROM python:3.11.3-slim AS build-image
+FROM python:3.11.3 AS build-image
 
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends build-essential gcc
