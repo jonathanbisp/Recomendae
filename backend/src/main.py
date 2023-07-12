@@ -47,3 +47,4 @@ app = get_application()
 @app.get("/")
 async def home():
     return {"version": get_app_settings().version}
+

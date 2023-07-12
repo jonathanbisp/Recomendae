@@ -1,0 +1,53 @@
+.user-info {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.login-options {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}
+
+.login-options span {
+  margin-bottom: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.close-icon {
+  font-size: 24px;
+  color: red;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.create-account {
+  cursor: pointer;
+}
+
+.popup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(184, 184, 184, 0.8);
+  z-index: 9999;
+}
+
+.popup button.close-button {
+  font-size: 24px;
+  color: red;
+  cursor: pointer;
+  background: none;
+  border: none;
+}

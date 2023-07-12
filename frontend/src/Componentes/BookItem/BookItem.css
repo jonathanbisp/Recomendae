@@ -1,0 +1,106 @@
+.book-item {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+.book-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.book-cover {
+  width: 80px;
+  height: 120px;
+  cursor: pointer;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-details {
+  flex-grow: 1;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.rating {
+  font-size: 18px;
+  color: #f4d03f;
+  margin-bottom: 5px;
+}
+
+.expanded-content {
+  margin-top: 10px;
+}
+
+.sinopse-section h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.sinopse-section p {
+  white-space: pre-line;
+}
+
+.actions {
+  margin-top: 10px;
+}
+
+.comment-section {
+  margin-top: 10px;
+}
+
+.rating-section p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.star {
+  font-size: 20px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.star.active {
+  color: #f4d03f;
+}
+
+.comment-textarea textarea {
+  width: 100%;
+  height: 80px;
+  max-height: 200px;
+  padding: 5px;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.comment-textarea textarea::placeholder {
+  color: #aaa;
+}
+
+.comment-textarea textarea:focus {
+  outline: none;
+}
+
+.comment-section button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}

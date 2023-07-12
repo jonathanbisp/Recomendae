@@ -1,0 +1,70 @@
+.login-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 5px;
+  width: 300px;
+  margin: auto;
+  margin-top: 50px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-form .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.login-form .form-group label {
+  margin-bottom: 5px;
+}
+
+.login-form .form-group input[type='text'],
+.login-form .form-group input[type='password'] {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login-form .form-group button[type='submit'] {
+  padding: 10px;
+  background-color: #428bca;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.login-form .form-group button[type='submit']:hover {
+  background-color: #3071a9;
+}
+
+.login-form .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #888;
+}
+
+.login-form .close-button:hover {
+  color: #555;
+}
