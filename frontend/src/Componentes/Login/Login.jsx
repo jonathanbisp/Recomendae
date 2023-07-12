@@ -6,12 +6,12 @@ import './Login.css';
 async function login(credentials){
   return api.post("/api/users/login", credentials
     )
-    .then((response) => response.data.user.token)
+    .then((response) => response.data.user)
     .catch((err) => {console.error("ops! ocorreu um erro" + err);
      });
 }
 
-function Login({ onClose, setToken }) {
+function Login({ onClose, setToken, setNomeUsuario, handleFecharLogin}) {
   const [email, setEmail] = useState("")
   const [senha, setSenha] = useState("")
 
@@ -23,7 +23,13 @@ function Login({ onClose, setToken }) {
         "password": senha
       }
     });
-    setToken('Token '+token);
+    if (token === undefined){
+      alert('Login inválido')
+      return
+    }
+    setNomeUsuario(token.username)
+    setToken('Token '+token.token)
+    handleFecharLogin()
   }
 
   return (

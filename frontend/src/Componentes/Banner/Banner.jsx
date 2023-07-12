@@ -55,7 +55,6 @@ function Banner() {
       <div className="news">
         {newsData.map((news, index) => (
           <div key={index} className={`news-item ${currentNews === index ? 'active' : ''}`}>
-            <img src={news.image} alt="Imagem da Notícia" />
             <h2>{news.title}</h2>
             <p>{news.content}</p>
           </div>

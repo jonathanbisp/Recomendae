@@ -5,12 +5,12 @@ import api from '../../api';
 async function verifica(credentials){
   return api.post("/api/users", credentials
     )
-    .then((response) => console.log(response.data.user.token))
+    .then((response) => response.data.user)
     .catch((err) => {console.error("ops! ocorreu um erro" + err);
      });
 }
 
-function Cadastro({ onClose, setToken }) {
+function Cadastro({ onClose, setToken, handleFecharCadastro, setNomeUsuario }) {
   const [tipoConta, setTipoConta] = useState('leitor');
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
@@ -51,7 +51,9 @@ function Cadastro({ onClose, setToken }) {
           "username": nome
         }
       })
-    setToken('Token '+token);
+      setNomeUsuario(token.username)
+      setToken('Token '+token.token)
+      handleFecharCadastro()
   };
 
   return (

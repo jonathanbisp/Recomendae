@@ -1,8 +1,18 @@
 import React, { useState } from "react";
-import axios from "axios";
+import Review from "./Review/Review";
+import api from "../../api";
 import "./BookItem.css";
 
-function BookItem({ user, ulrImg, titulo, autor, sinopse }) {
+async function adicionaReview(slug, dados){
+  console.log(slug)
+  return api.post("/api/books/"+slug+"/reviews", dados
+    )
+    .then((response) => console.log(response))
+    .catch((err) => {console.error("ops! ocorreu um erro" + err);
+     });
+}
+
+function BookItem({ user, ulrImg, titulo, autor, sinopse, slug }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isCommenting, setIsCommenting] = useState(false);
   const [rating, setRating] = useState(0);
@@ -38,13 +48,14 @@ function BookItem({ user, ulrImg, titulo, autor, sinopse }) {
     }
 
     const newReview = {
-      usuario: user || "Anônimo",
-      data: getCurrentDate(),
-      avaliacao: rating,
-      comentario: comment || "",
-    };
+        "review": {
+          "comment": comment || "",
+          "rating": rating
+        }
+      }
+    ;
 
-    setReviews([newReview, ...reviews]);
+    adicionaReview(slug, newReview)
 
     setRating(0);
     setComment("");
@@ -107,34 +118,8 @@ function BookItem({ user, ulrImg, titulo, autor, sinopse }) {
               <button onClick={handleSendEvaluation}>Enviar</button>
             </div>
           )}
+          <Review />
 
-          <div className="reviews-section">
-            <h2>Avaliações</h2>
-            <div className="reviews-content">
-              {reviews.length > 0 ? (
-                reviews
-                  .sort((a, b) => new Date(a.data) - new Date(b.data))
-                  .map((review, index) => (
-                    <div key={index} className="review">
-                      <div className="review-info">
-                        <div className="review-user">{review.usuario}</div>
-                        <div className="review-date">{review.data}</div>
-                        <div className="review-rating">
-                          {Array.from({ length: review.avaliacao }).map((_, index) => (
-                            <span key={index}>&#9733;</span>
-                          ))}
-                        </div>
-                      </div>
-                      {review.comentario && (
-                        <div className="review-comment">{review.comentario}</div>
-                      )}
-                    </div>
-                  ))
-              ) : (
-                <div>Nenhuma avaliação disponível.</div>
-              )}
-            </div>
-          </div>
         </div>
       )}
     </div>
